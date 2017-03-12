@@ -1,0 +1,33 @@
+<ul id="mobile-primary-menu" class="menu">
+    <li class="">
+        <a href="{{ path('nb_main_homepage') }}">Accueil</a>
+    </li>
+    <li class="">
+        <a href="">Locations de voitures</a>
+    </li>
+    <li><a href="{{ path('nb_main_aboutus') }}">Qui sommes-nous ?</a></li>
+    <li><a href="{{ path('nb_main_promo') }}">Bons plans</a></li>
+
+
+    <li class="">
+        <a href="{{ path('nb_main_devenir_partenaire') }}">Devenir Partenaire</a>
+    </li>
+    <li class="">
+        <a href="{{ path('nb_main_contact') }}">Contact</a>
+    </li>
+</ul>
+
+<ul class="mobile-topnav container">
+    <li><a href="#">MON COMPTE</a></li>
+    <li><a href="#" data-toggle="collapse">IMPRIMER TICKET</a></li>
+
+    <li><a href="#" class="soap-popupbox">ANNULATION</a></li>
+
+    {% if app.user %}
+        <li><a href="#">MON COMPTE</a></li>
+    {% else %}
+        <li><a href="/login" class="">CONNEXION</a></li>
+        <li><a href="{{ path('fos_user_registration_register') }}" >INSCRIPTION</a></li>
+    {% endif %}
+
+</ul>

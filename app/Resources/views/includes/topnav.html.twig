@@ -1,0 +1,17 @@
+<div class="container">
+    <ul class="quick-menu pull-left">
+        <li><a href="#" class="soap-popupbox">IMPRIMER TICKET</a></li>
+        <li><a href="#" class="soap-popupbox">ANNULATION</a></li>
+
+    </ul>
+    <ul class="quick-menu pull-right">
+        {% if app.user %}
+            <li><a href="#">MON COMPTE</a></li>
+        {% else %}
+            <li><a href="/login" class="">CONNEXION</a></li>
+            <li><a href="{{ path('fos_user_registration_register') }}" >INSCRIPTION</a></li>
+        {% endif %}
+
+
+    </ul>
+</div>

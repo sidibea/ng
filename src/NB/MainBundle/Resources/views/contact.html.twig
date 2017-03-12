@@ -1,0 +1,119 @@
+{% extends "::base.html.twig" %}
+
+{% block title %}Contactez-nous| La première plateforme d'achat et de réservation de billet de bus {% endblock %}
+{% block description %}Notre service client reste à votre équipe 24/7 pour vous accompagner et vous guider dans votre voyage.{% endblock %}
+
+{% block keywords %}
+    voyage bus, bus voyage, billet de bus pas cher, bus mali, voyage car, bus pas cher mali, reservation bus, mali bus, billet de bus,
+    billet bus, billet pas cher, prix billet, voyage mali, reservation nextBus, nextBus, reservation en ligne,
+    plateforme de vente mali, plateforme de vente au mali, plateforme de vente de billet de bus, plateforme de vente
+    de billet de bus au Mali, reserver, reserver mali, reserver au mali, achat de billet, billet mali,
+    billet de bus mali, plateforme de reservation de billet de bus au Mali
+{% endblock %}
+
+{% block content %}
+    <div class="page-title-container">
+        <div class="container">
+            <div class="page-title pull-left">
+                <h2 class="entry-title">Contactez-nous</h2>
+            </div>
+            <ul class="breadcrumbs pull-right">
+                <li><a href="#">ACCUEIL</a></li>
+                <li class="active">Contactez-nous</li>
+            </ul>
+        </div>
+    </div>
+
+    <section id="content">
+        <div class="container">
+            <div id="main">
+                <div class="travelo-google-map block"></div>
+                <div class="row">
+                    <div class="col-sm-4 col-md-3">
+                        <div class="travelo-box contact-us-box">
+                            <h4>Contact us</h4>
+                            <ul class="contact-address">
+                                <li class="address">
+                                    <i class="soap-icon-address circle"></i>
+                                    <h5 class="title">Adresse</h5>
+                                    <p>Balabougou SEMA près de shopreate.</p>
+                                    <p>Rue: 111 Porte: 202.</p>
+                                </li>
+                                <li class="phone">
+                                    <i class="soap-icon-phone circle"></i>
+                                    <h5 class="title">Telephone</h5>
+                                    <p>Local: (+223) 44-27-27-18</p>
+                                    <p>Mobile:(+223) 73 03 39 39</p>
+                                </li>
+                                <li class="email">
+                                    <i class="soap-icon-message circle"></i>
+                                    <h5 class="title">Email</h5>
+                                    <p>info@next-bus.net</p>
+                                    <p>www.next-bus.net</p>
+                                </li>
+                            </ul>
+                            <ul class="social-icons full-width">
+                                <li class="facebook"><a title="facebook" href="https://www.facebook.com/nextbusml/" target="_blank" data-toggle="tooltip"><i class="soap-icon-facebook"></i></a></li>
+                                <li class="twitter"><a title="twitter" href="https://twitter.com/NextBusml" target="_blank" data-toggle="tooltip"><i class="soap-icon-twitter"></i></a></li>
+                                <li><a href="#" data-toggle="tooltip" title="GooglePlus"><i class="soap-icon-googleplus"></i></a></li>
+                                <li><a href="#" data-toggle="tooltip" title="Linkedin"><i class="soap-icon-linkedin"></i></a></li>
+                                <li><a href="#" data-toggle="tooltip" title="Vimeo"><i class="soap-icon-vimeo"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-sm-8 col-md-9">
+                        <div class="travelo-box">
+                            {% for flashMessage in app.session.flashbag.get('notice') %}
+                                <span class="info green-color">{{ flashMessage }}</span>
+                            {% endfor %}
+                            <form class="contact-form"  method="post">
+                                <h4 class="box-title">Envoyez-nous votre message</h4>
+                                <div class="row form-group">
+                                    <div class="col-xs-6">
+                                        <label>Votre nom complet</label>
+                                        <input type="text" name="name" class="input-text full-width">
+                                    </div>
+                                    <div class="col-xs-6">
+                                        <label>Votre Email</label>
+                                        <input type="email" name="email" class="input-text full-width">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label>Votre Message</label>
+                                    <textarea name="message" rows="6" class="input-text full-width" placeholder="Ecrivez votre message ici"></textarea>
+                                </div>
+                                <button type="submit" class="btn-large full-width">ENVOYER LE MESSAGE</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+{% endblock %}
+
+
+{% block scripts %}
+    <script type="text/javascript">
+        tjq(".travelo-google-map").gmap3({
+            map: {
+                options: {
+                    center: [12.618573, -7.998936],
+                    zoom: 12
+                }
+            },
+            marker:{
+                values: [
+                    {latLng:[12.618573, -7.998936], data:"Badalabougou"}
+
+                ],
+                options: {
+                    draggable: false
+                },
+            }
+        });
+
+    </script>
+{% endblock %}

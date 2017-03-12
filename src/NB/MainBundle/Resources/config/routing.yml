@@ -1,0 +1,41 @@
+nb_main_homepage:
+    path:     /
+    defaults: { _controller: NBMainBundle:Main:index }
+nb_main_listing:
+    path:     /listing
+    defaults: { _controller: NBMainBundle:Main:listing }
+nb_main_infos_client:
+    path:     /information-client/{travel_id}/{dateJ}
+    defaults: { _controller: NBMainBundle:Main:infos }
+nb_main_payment:
+    path:     /payments/{id}
+    defaults: { _controller: NBMainBundle:Main:payment }
+nb_main_callback:
+    path:     /callback
+    defaults: { _controller: NBMainBundle:Main:callback }
+nb_main_webhook:
+    path:     /webhook
+    defaults: { _controller: NBMainBundle:Main:webhook }
+nb_main_thanks_you:
+    path:     /reservation/merci/{id}
+    defaults: { _controller: NBMainBundle:Main:thanks }
+
+
+nb_main_aboutus:
+    path:     /cms/qui-sommes-nous
+    defaults: { _controller: NBMainBundle:CMS:about }
+nb_main_preparer_voyage:
+    path:     /cms/preparer-votre-voyage
+    defaults: { _controller: NBMainBundle:CMS:prepare }
+nb_main_devenir_partenaire:
+    path:     /cms/devenir-partenaire
+    defaults: { _controller: NBMainBundle:CMS:partenaire }
+nb_main_contact:
+    path:     /contactez-nous
+    defaults: { _controller: NBMainBundle:CMS:contact }
+nb_main_promo:
+    path:     /promotions
+    defaults: { _controller: NBMainBundle:CMS:promo }
+nb_main_newsletter_add:
+    path:     /newsletter/add
+    defaults: { _controller: NBMainBundle:CMS:newsletter }

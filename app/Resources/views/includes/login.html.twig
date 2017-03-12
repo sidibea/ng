@@ -1,0 +1,25 @@
+<form action="{{ path("fos_user_security_check") }}" method="post">
+
+    <div class="form-group">
+        <label for="username">{{ 'security.login.username'|trans({}, 'FOSUserBundle') }}</label>
+        <input type="text" class="input-text full-width" id="username" name="_username"   placeholder="Adresse email" required="required" />
+    </div>
+    <div class="form-group">
+        <label for="password">{{ 'security.login.password'|trans({}, 'FOSUserBundle') }}</label>
+        <input type="password" class="input-text full-width" id="password" name="_password" placeholder="Mot de passe" required="required" />
+    </div>
+    <div class="form-group">
+        <a href="#" class="forgot-password pull-right">Forgot password?</a>
+        <div class="checkbox checkbox-inline">
+            <label>
+                <input type="checkbox" id="remember_me" name="_remember_me" value="on" />
+                <label for="remember_me">{{ 'security.login.remember_me'|trans({}, 'FOSUserBundle') }}</label>
+            </label>
+        </div>
+    </div>
+    <input type="hidden" name="_target_path" value="{{ app.request.uri }}" />
+    <input type="submit" id="_submit" name="_submit" value="{{ 'security.login.submit'|trans({}, 'FOSUserBundle') }}" />
+    <div class="seperator"></div>
+    <p>Don't have an account? <a href="#travelo-signup" class="goto-signup soap-popupbox">Sign up</a></p>
+</form>
+
